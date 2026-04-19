@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "panthers-viz",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 5173,
+      "cwd": "/Users/Cam/Library/Mobile Documents/com~apple~CloudDocs/Claude Cloud Space/panthers-draft-prospects-visualizer"
+    }
+  ]
+}

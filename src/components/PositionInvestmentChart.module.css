@@ -1,0 +1,68 @@
+.container { display: flex; flex-direction: column; gap: 4px; }
+
+.headerRow {
+  display: grid;
+  grid-template-columns: 48px 1fr 48px 88px 120px;
+  gap: 10px; align-items: center;
+  padding: 4px 12px 8px;
+  font-size: 10px; font-weight: 700; color: var(--text-dim);
+  text-transform: uppercase; letter-spacing: 0.4px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 48px 1fr 48px 88px 120px;
+  gap: 10px; align-items: center;
+  padding: 9px 12px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.row:hover { background: var(--bg-hover); border-color: var(--border-strong); }
+.rowActive { border-color: var(--accent); background: var(--accent-dim); }
+
+.posPill {
+  display: inline-block; padding: 2px 6px; border-radius: 3px;
+  font-size: 11px; font-weight: 700; color: #fff; text-align: center;
+}
+
+.barTrack {
+  position: relative; height: 10px; background: rgba(0,0,0,0.05);
+  border-radius: 5px; overflow: hidden; min-width: 60px;
+}
+.barOther {
+  position: absolute; left: 0; top: 0; height: 100%;
+  background: rgba(0, 133, 202, 0.2); border-radius: 5px;
+  transition: width 0.4s;
+}
+.barTop30 {
+  position: absolute; left: 0; top: 0; height: 100%;
+  background: var(--accent); border-radius: 5px;
+  transition: width 0.4s;
+}
+
+.count { font-size: 14px; font-weight: 700; color: var(--text); text-align: center; }
+
+.top30Count { display: flex; align-items: center; justify-content: flex-start; }
+.top30Badge {
+  font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 3px;
+  background: var(--accent-dim); color: var(--accent);
+}
+.noneText { font-size: 11px; color: var(--text-dim); }
+
+.needCell { display: flex; align-items: center; }
+.needWrap { display: flex; align-items: center; gap: 6px; width: 100%; }
+.needTier {
+  font-size: 9px; font-weight: 700; color: var(--text-dim);
+  text-transform: uppercase; min-width: 14px;
+}
+.needMini {
+  flex: 1; height: 6px; background: rgba(0,0,0,0.06);
+  border-radius: 3px; overflow: hidden; min-width: 40px;
+}
+.needMiniFill {
+  height: 100%; background: var(--accent); border-radius: 3px; transition: width 0.3s;
+}
+.needLevel { font-size: 11px; font-weight: 700; color: var(--text); min-width: 22px; }
+
+.hint { font-size: 11px; color: var(--text-dim); margin: 6px 0 0; text-align: center; }

@@ -1,0 +1,372 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 560px;
+  width: 100%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  animation: slideUp 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.posRank {
+  font-size: 11px;
+  font-weight: 800;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+.closeBtn:hover { color: var(--text); }
+
+.playerName {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.1;
+}
+
+.headerMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.posBadge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.school {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.grade {
+  font-size: 12px;
+  color: var(--text-dim);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.headerStats {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+
+.body {
+  padding: 16px 24px 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.noProfile {
+  color: var(--text-muted);
+  font-size: 14px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Draft Range */
+.rangeContainer { padding: 4px 0; }
+
+.rangeTrack {
+  height: 6px;
+  background: var(--bg-card);
+  border-radius: 3px;
+  position: relative;
+  margin-bottom: 6px;
+  border: 1px solid var(--border);
+}
+
+.rangeFill {
+  position: absolute;
+  inset: 0;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #4ade80, #facc15, #ef4444);
+  opacity: 0.3;
+}
+
+.rangeMarker {
+  position: absolute;
+  top: -5px;
+  width: 16px;
+  height: 16px;
+  background: var(--accent);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+.rangeMarkerLabel {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+
+.rangeLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+/* Callouts */
+.callouts { display: flex; flex-direction: column; gap: 4px; }
+
+.callout {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-dim);
+  padding: 6px 12px;
+  border-radius: 4px;
+  border-left: 3px solid var(--accent);
+}
+
+/* Production */
+.prodGames {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-dim);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.prodHeadline {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Athletic Profile */
+.measGrid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+@media (max-width: 500px) {
+  .measGrid { grid-template-columns: 1fr; }
+}
+
+.pctBars {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.pctRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pctLabel {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  width: 56px;
+  flex-shrink: 0;
+}
+
+.pctTrack {
+  flex: 1;
+  height: 6px;
+  background: var(--bg-card);
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.pctFill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.pctValue {
+  font-size: 10px;
+  font-weight: 800;
+  width: 30px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Strengths / Weaknesses */
+.prosConsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 500px) {
+  .prosConsGrid { grid-template-columns: 1fr; }
+}
+
+.prosTitle {
+  font-size: 11px;
+  font-weight: 700;
+  color: #16a34a;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.consTitle {
+  font-size: 11px;
+  font-weight: 700;
+  color: #dc2626;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.prosList, .consList {
+  list-style: none;
+  padding: 0;
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.prosList li::before {
+  content: '●';
+  color: #16a34a;
+  margin-right: 6px;
+  font-size: 8px;
+}
+
+.consList li::before {
+  content: '●';
+  color: #dc2626;
+  margin-right: 6px;
+  font-size: 8px;
+}
+
+/* Panthers Fit */
+.fitIdealSummary {
+  font-size: 9px; font-weight: 500; color: var(--text-dim);
+  text-transform: none; letter-spacing: 0; margin-left: 4px;
+}
+
+.fitChecks {
+  display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px;
+}
+
+.fitRow {
+  display: grid; grid-template-columns: 20px 70px 80px 1fr;
+  align-items: center; gap: 6px;
+  font-size: 12px;
+}
+
+.fitIcon { font-size: 12px; font-weight: 700; text-align: center; }
+.fitPass { color: #16a34a; }
+.fitFail { color: #dc2626; }
+.fitNeutral { color: var(--text-dim); }
+
+.fitLabel { font-weight: 600; color: var(--text); }
+.fitValue { color: var(--text); font-variant-numeric: tabular-nums; }
+.fitIdeal { font-size: 11px; color: var(--text-dim); }
+
+.fitTraits { margin-top: 4px; }
+.fitTraitsLabel {
+  font-size: 10px; font-weight: 700; color: var(--text-dim);
+  text-transform: uppercase; letter-spacing: 0.4px; display: block; margin-bottom: 6px;
+}
+.fitTraitList { display: flex; flex-wrap: wrap; gap: 4px; }
+.fitTrait {
+  font-size: 11px; font-weight: 600; padding: 3px 8px;
+  border-radius: 3px; background: var(--bg-card);
+  border: 1px solid var(--border); color: var(--text-muted);
+}
+
+/* Scouting Summary */
+.summaryText {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
